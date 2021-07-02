@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="yahooInitail.css">
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<title>搜搜闲鱼</title>
+	<style>
+		#searchBox{
+			width: 630px;
+			height: 200px;
+			margin: auto;
+			margin-top: 200px;
+		}
+		#logo{
+			width:inherit;
+			height: 135px;
+		}
+		#logo img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		#formBox{
+			width:inherit;
+			height:65px;
+		}
+		#input-search{
+			width:500px;
+			height:37px;
+			float:left;
+			padding-left: 14px;
+			border: 3px solid black;
+			outline:none;
+			font-size:15px;
+		}
+		#submitBtn{
+			display: block;
+			width:110px;
+			height: 43px;
+			float:left;
+			border: 0;
+			border-radius: 0;
+			background: black;
+			color:white;
+			cursor: pointer;
+			outline:none;
+		}
+		#search-good{
+			width:70px;
+			height: 20px;
+			line-height: 20px;
+			float:left;
+			text-align: center;
+			font-size: 13px;
+			color:white;
+			background: black;
+			cursor: pointer;
+		}
+		#search-seller{
+			width:70px;
+			height: 20px;
+			line-height: 20px;
+			float:left;
+			text-align: center;
+			font-size: 13px;
+			color:black;
+			background: #EEE;
+			cursor: pointer;
+		}
+		#footer{
+			width: 100%;
+			height:50px;
+			background: #EEE;
+			text-align: center;
+			padding-top: 10px;
+			position: absolute;
+			bottom: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="searchBox">
+		<div id="logo">
+			<img  src="FishCoder.jpg">
+		</div>
+		<div id="formBox">
+				<span id="search-good" >搜宝贝</span>
+				<span id="search-seller" >搜卖家</span>
+				<input id="input-search" name="q" type="text" value="" placeholder=" 请输入宝贝名称"/>
+				<button id="submitBtn" type="button" onclick="submitSearch()">搜索</button>
+		</div>
+    </div>
+	<div id="footer">
+		<span>&copy;&reg; @2017 ALL RIGHT RESERVED 版权所有，翻版必究</span>
+		<br />
+		<span>Created by LxiousXiang,仅供个人自由学习生活所用，无商业目的，最终解释权归创作者所有</span>
+	</div>
+</body>
+</html>
+<script>
+	/*载入页面，文本框获得焦点*/
+	$(document).ready(function(){
+		$("#input-search").focus();
+	});
+	var item = "&q=";
+	$(function(){
+		$("#search-good").click(function(){
+			$("#search-seller").css("background","#EEE");
+			$("#search-seller").css("color","black");
+			$("#search-good").css("background","black");
+			$("#search-good").css("color","white");
+			$("#input-search").attr("placeholder","请输入宝贝名称");
+			item = "&q=";
+		});
+	});
+	$(function(){
+		$("#search-seller").click(function(){
+			$("#search-good").css("background","#EEE");
+			$("#search-good").css("color","black");
+			$("#search-seller").css("background","black");
+			$("#search-seller").css("color","white");
+			$("#input-search").attr("placeholder","请输入用户ID");
+			item = "&usernick=";
+		});
+	});
+
+	function submitSearch(){
+		var url = "https://s.2.taobao.com/list/list.htm?";
+		url = url + item + $("#input-search").val() + "&_input_charset=utf8";
+		window.open(url);
+	}
+	//按下ENTER键立刻搜索
+	$(document).keyup(function(event){  
+    	if(event.keyCode ==13){  
+        	 submitSearch(); 
+      	}  
+    });
+</script>
