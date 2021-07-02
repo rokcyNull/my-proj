@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./index.css" />
+  <title>动听音乐</title>
+
+</head>
+<body>
+  <div id="app" class="wrap" v-cloak>
+    <div class="player-header">
+      <img src="./assets/logo.png" alt="" class="logo">
+      <input type="text" class="input-search" v-model="query" @keyup.enter="searchMusic" autofocus placeholder="请输入歌曲名">
+    </div>
+    <div class="player-main">
+      <div class="song-wrapper">
+        <ul class="song-list">
+          <li v-for="song in musicList" @click="playMusic(song.id)">{{ generateSongName(song) }}</li>
+        </ul>
+      </div>
+      <div class="song-player">
+        <img src="./assets/player_bar.png" class="play-bar" :class="{isPlay: isPlaying}">
+        <img src="./assets/disc.png" class="disc autoRotate" :class="{playing: isPlaying}">
+        <img :src="musicCover" class="cover autoRotate"  :class="{playing: isPlaying}">
+      </div>
+      <div class="comments-wrapper">
+        <ul class="comments-list">
+          <li class="comments-item" v-for="comment in commentList">
+            <img :src="comment.user.avatarUrl">
+            <div class="comments-info">
+              <p class="comments-user">{{ comment.user.nickname }}</p>
+              <p class="comments-text">{{ comment.content }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="player-controls">
+      <audio controls class="myaudio" @play="play" @pause="pause" :src="musicUrl" autoplay="autoplay" loop="loop"></audio>
+    </div>
+  </div>
+
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- axios地址引入 -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- 自定义js引入 -->
+  <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+#todoapp {
+  width: 600px;
+  margin: 100px auto;
+}
+
+.header {
+  width: inherit;
+  height: 100px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 200;
+  color: brown;
+}
+
+.main {
+  width: inherit;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
+  color: #999;
+}
+
+.input-box {
+  width: inherit;  
+  height: 50px;
+  font-size: 20px;
+  color: #999;
+  border: none;
+  box-sizing: border-box;
+  padding: 0 25px;
+  outline: none;
+}
+.input-box::placeholder {
+  font-style: italic;
+  font-weight: 300;
+}
+
+
+.list-box {
+  width: inherit;
+  height: 50px;
+  box-sizing: border-box;
+  border-top: 1px solid #E0E0E0;
+  line-height: 50px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between; 
+}
+
+.list-item-num {
+  font-size: 16px;
+  padding: 0 26px 0 10px;
+}
+
+.list-item-text {
+  display: flex;
+  flex-grow: 1;
+  font-size: 20px;
+}
+
+.list-item-close {
+  display: none;
+  width: 20px;
+  height: 20px;
+  background: url(./assets/deleteIcon.png);
+  background-size: cover;
+  margin: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.list-box:hover > button{
+  display: block;
+}
+
+.list-total {
+  position: relative;
+}
+
+.list-total-info {
+  width: inherit;
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+  border-top: 1px solid #E0E0E0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 14px;
+  background: #fff;
+}
+
+.list-decorate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 30px;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border: 1px solid #E0E0E0;
+}
+
+.list-decorate-1 {
+  z-index: -1;
+  top: 5px;
+  width: 98%;
+}
+
+.list-decorate-2 {
+  z-index: -2;
+  top: 10px;
+  width: 96%;
+}
+
+.clear-all {
+  cursor: pointer;
+}

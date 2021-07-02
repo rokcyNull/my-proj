@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./index.css" />
+  <title>天气预报</title>
+</head>
+<body>
+  <div class="wrap" id="app">
+    <!-- 搜索部分 -->
+    <div class="search-form">
+      <div class="header-logo">
+        <img src="./assets/logo.png" alt="">
+      </div>
+      <div class="input-box">
+        <input type="text" class="input-text" v-model="city" @keyup.enter="searchWeather" placeholder="请输入查询的城市" autofocus>
+        <button class="input-submit-btn" @click="searchWeather">搜索</button>
+      </div>  
+      <div class="hot-city">
+        <a href="javascript:;" @click="changeCity('北京')">北京</a>
+        <a href="javascript:;" @click="changeCity('上海')">上海</a>
+        <a href="javascript:;" @click="changeCity('广州')">广州</a>
+        <a href="javascript:;" @click="changeCity('深圳')">深圳</a>
+      </div>
+    </div>
+    <!-- 查询结果列表 -->
+    <ul class="weather-list" v-cloak>
+      <li class="weather-item" v-for="item in weatherList">
+        <div class="info-type">{{ item.type }}</div>
+        <div class="info-wind">{{ formatWindText(item) }} </div>
+        <div class="info-temp">
+          <span>{{ item.low }}</span>
+          ~
+          <span>{{ item.high }}</span>
+        </div>
+        <div class="info-date">{{ item.date }}</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- axios地址引入 -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- 自定义js引入 -->
+  <script src="./index.js"></script>
+</body>
+</html>

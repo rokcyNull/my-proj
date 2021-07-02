@@ -1,0 +1,199 @@
+[v-cloak] {
+  display: none !important;
+}
+
+body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./assets/bg.jpg);
+  background-size: cover;
+}
+
+.wrap {
+  width: 800px;
+  margin: 80px auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* header部分 */
+.player-header {
+  width: inherit;
+  height: 50px;
+  background: #3399FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-header img {
+  width: 130px;
+  margin-left: 20px;
+}
+
+.player-header .input-search {
+  width: 280px;
+  height: 30px;
+  border: none;
+  outline: none;
+  margin-right: 40px;
+  border-radius: 20px;
+  background-image: url(./assets/search-icon.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 290px center;
+  font-size: 13px;
+  padding: 0 20px;
+  color: #666;
+}
+
+/* main部分 */
+.player-main {
+  width: inherit;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.song-wrapper {
+  width: 220px;
+  height: inherit;
+  background: url(./assets/line.png) no-repeat center right;
+  background-size: auto 360px;
+  overflow-y: scroll;
+}
+
+.song-list {
+  list-style: none;
+  padding: 0 14px;
+  margin: 0;
+}
+
+.song-list li{
+  font-size: 12px;
+  color: #333;
+  line-height: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.song-player {
+  width: 360px;
+  height: inherit;
+  position: relative;
+  overflow: hidden;
+}
+.isPlay {
+  transform: rotate(0) !important;
+}
+.playing {
+  animation-play-state: running !important;
+}
+.autoRotate {
+  animation-name: Rotate;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+}
+@keyframes Rotate {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.comments-wrapper {
+  width: 220px;
+  height: inherit;
+  background: url(./assets/line.png) no-repeat center left;
+  background-size: auto 360px;
+  overflow-y: scroll;
+}
+
+.comments-list {
+  list-style: none;
+  padding: 5px 14px 0 14px;
+  margin: 0;
+}
+
+.comments-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.comments-list img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.comments-info {
+  width: 144px;
+  font-size: 12px;
+}
+.comments-user {
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  color: #333;
+}
+.comments-text {
+  margin: 0;
+  margin-top: 5px;
+  color: #666;
+}
+
+.play-bar {
+  position: absolute;
+  top: -10px;
+  left: 162px;
+  z-index: 20;
+  transform: rotate(-25deg);
+  transform-origin: 12px 12px;
+  transition: 1s;
+}
+
+.disc {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 15;
+  width: 220px;
+}
+
+.cover {
+  position: absolute;
+  top: 118px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10;
+  width: 130px;
+}
+
+/* footer部分 */
+.player-controls {
+  width: 800px;
+  height: 40px;
+}
+
+.myaudio {
+  width: inherit;
+  height: inherit;
+  outline: none;
+  background: #f1f3f4;
+}
+

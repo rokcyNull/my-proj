@@ -1,0 +1,113 @@
+[v-cloak] {
+  display: none !important;
+}
+
+.wrap {
+  width: 800px;
+  margin: 100px auto;
+}
+
+/* 搜索框头部样式 */
+.search-form {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  width: inherit;
+  height: 90px;
+  text-align: center;
+}
+
+.header-logo > img {
+  width: 240px;
+}
+
+.input-box {
+  width: inherit;
+  height: 36px;
+  display: flex;
+  justify-self: flex-start;
+}
+
+.input-text {
+  width: 500px;
+  height: inherit;
+  outline: none;
+  border: 2px solid lightskyblue;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.input-submit-btn {
+  width: 100px;
+  height: inherit;
+  border: 2px solid lightskyblue;
+  background: lightskyblue;
+  color: #fff;
+  font-size: 16px;
+  line-height: inherit;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+}
+
+.hot-city > a {    
+  text-decoration: none;
+  padding: 0 14px 0 0;
+  font-size: 12px;
+  color: #666;
+}
+.hot-city > a:hover {
+  color: lightskyblue;
+}
+
+/* 查询结果列表样式 */
+.weather-list {
+  width: inherit;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+} 
+
+.weather-item {
+  width: 160px;
+  text-align: center;
+  color: yellowgreen;
+  position: relative;
+}
+.weather-item:not(:last-child)::after{
+  content: "";
+  width: 0;
+  height: 80px;
+  border-right: 1px solid #ccc;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  margin: auto 0;
+}
+
+.info-type {
+  font-size: 24px;
+}
+
+.info-wind {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.info-temp {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.info-date {
+  color: #999;
+  font-size: 13px;
+}
