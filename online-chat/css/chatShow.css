@@ -1,0 +1,377 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background:white url(../images/chatPanelBg/chatPanelbg4.jpeg);
+	background-attachment:fixed;
+	background-size:cover;
+}
+#container{
+	width: 900px;
+	height:600px;
+	margin: auto;
+	margin-top: 50px;
+}
+
+/*******用户个人账号信息******/
+#welcomeUser{
+	height:18px;
+	margin-left:5px;
+	color:#69F;
+	font-size:16px;
+	font-weight:bold;
+}
+#user{
+	height:20px;
+	color:orange;
+}
+#user:hover{
+	background:#69F;
+}
+#userInfo{
+	width:130px;
+	float:left;
+	margin-left:9px;
+	display:none;
+}
+.userInfo_a{
+	display:block;
+	width:100px;
+	height:40px;
+	line-height:40px;
+	text-decoration:none;
+	padding-left:30px;
+	border-bottom:1px solid white;
+	background:#69F;	
+}
+#aLogOut{
+	display:block;
+	width:130px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	background:#69F;
+	border:0;
+}
+#userInfo a:hover{
+	background-color:orange;
+	text-decoration:none;	
+}
+
+
+
+/*********用户聊天部分********/
+#chat_box{
+	width: 700px;
+	height:580px;
+	float:left;
+	position:relative;
+}
+#title{
+	height:50px;
+	font-size:28px;
+	letter-spacing:7px;
+	line-height:50px;
+	text-align:center;
+	background:#69F;
+	border-left:1px solid blue;
+	border-right:1px solid blue;
+	border-top:1px solid blue;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+#msgShowPanel{
+	width:690px;
+	height: 420px;
+	background:url(../images/showMsgPanelBg/panelBg0.jpeg);
+	background-size:cover;
+	padding-left:8px;
+	padding-top:10px;
+	border-left:1px solid blue;
+	border-right:1px solid blue;
+	float:left;
+	z-index:1;
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+.msgShowPanel_emj_small{
+	width:20px;
+	height:20px;
+	border-radius:5px;
+}
+.msgShowPanel_emj_big{
+	width:100px;
+	height:100px;
+	border-radius:10px;	
+}
+
+
+/********多功能扩展区域*******/
+#Morefunction{
+	width:698px;
+	height:40px;
+	border:1px solid blue;
+	border-bottom-left-radius:12px;
+	border-bottom-right-radius:12px;
+	background:#EEE;
+	float:left;
+}
+#Morefunction a{
+	display:block;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	text-decoration:none;
+	width:87px;
+	float:right;
+	background-color:#69F;
+	border-left:1px solid white;
+	border-radius:7px;
+	cursor:pointer;
+}
+#Morefunction a:hover{
+	background-color:#F96;
+}
+/* 小表情 */
+#emojiBox{
+	width:200px;
+	height:150px;
+	z-index:2;
+	position:absolute;
+	left:390px;
+	top:329px;
+	background:white;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	box-shadow:0px -2px 10px #333333;
+	display:none;
+}
+#emojiBox img{
+	display:block;
+	width:37px;
+	height:40px;
+	float:left;
+	cursor:pointer;
+}
+/* 大表情 */
+#bigemojiBox{
+	width:240px;
+	height:180px;
+	z-index:3;
+	position:absolute;
+	left:445px;
+	top:299px;
+	background:white;
+	overflow-y:scroll;
+	overflow-x:hidden;;
+	box-shadow:0px -2px 10px #333333;
+	display:none;
+}
+#bigemojiBox img{
+	width:55px;
+	height:60px;
+	float:left;
+	cursor:pointer;
+}
+/* 文字颜色 */
+#fontColorBox{
+	width:70px;
+	height:240px;
+	z-index:4;
+	position:absolute;
+	left:356px;
+	top:240px;
+	background:white;
+	box-shadow:0px -2px 10px #333333;
+	display:none;
+}
+#fontColorBox a{
+	display:block;
+	width:inherit;
+	height:29px;
+	line-height:29px;
+	text-align:center;
+	text-decoration:none;
+	border-bottom:1px solid gray;
+	float:left;
+	cursor:pointer;
+}
+/* 文字大小 */
+#fontSizeBox{
+	width:80px;
+	height:240px;
+	z-index:3;
+	position:absolute;
+	left:262px;
+	top:240px;
+	background:white;
+	box-shadow:0px -2px 10px #333333;
+	display:none;
+}
+#fontSizeBox a{
+	display:block;
+	width:inherit;
+	height:29px;
+	line-height:29px;
+	text-align:center;
+	text-decoration:none;
+	border-bottom:1px solid gray;
+	float:left;
+	cursor:pointer;
+}
+/* 匿名聊天 */
+#anonymousChatBox{
+	width:80px;
+	height:240px;
+	z-index:4;
+	position:absolute;
+	left:175px;
+	top:240px;
+	background:white;
+	box-shadow:0px -2px 10px #333333;
+	display:none;
+}
+#anonymousChatBox a{
+	display:block;
+	width:inherit;
+	height:29px;
+	line-height:29px;
+	text-align:center;
+	text-decoration:none;
+	border-bottom:1px solid gray;
+	float:left;
+	cursor:pointer;
+}
+/* 聊天背景 */
+#chatBgImgBox{
+	width:80px;
+	height:210px;
+	z-index:5;
+	position:absolute;
+	left:90px;
+	top:270px;
+	background:white;
+	box-shadow:0px -2px 10px #333333;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	display:none;
+}
+#chatBgImgBox img{
+	width:68px;
+	height:45px;
+}
+/* 聊天时长 */
+#chatTimeBox{
+	width:160px;
+	height:65px;
+	z-index:6;
+	position:absolute;
+	left:5px;
+	top:415px;
+	background:white;
+	box-shadow:0px -2px 10px #333333;
+	display:none;	
+}
+#chatTimeBox span{
+	display:block;
+	width:inherit;
+	margin-top:1px;
+	height:15px;
+	line-height:15px;
+	font-size:12px;
+	text-align:center;
+}
+
+
+
+
+
+/*******聊天输入框、发送按钮********/
+#MsgContent{
+	width:540px;
+	height:38px;
+	margin-top:10px;
+	border:1px solid gray;
+	float:left;
+	font-size:16px;
+}
+#sendMsg{
+	width:147px;
+	height:40px;
+	border:0px;
+	border-radius:5px;
+	display:block;
+	float:left;
+	margin-left:8px;
+	margin-top:10px;
+	background:#06F;
+}
+
+
+/*********在线成员列表块*********/
+#online_list{
+	width:199px;
+	height:522px;
+	float:right;
+	display:none;
+}
+#online_list_title{
+	height:30px;
+	line-height:30px;
+	width:inherit;
+	text-align:center;
+	letter-spacing:2px;
+	border-top-left-radius:12px;
+	border-top-right-radius:12px;
+	background:#F96;	
+}
+#online_list_content{
+	width:inherit;
+	height:492px;
+	border-bottom-left-radius:12px;
+	border-bottom-right-radius:12px;
+	background:#EEE;
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+#online_list_content a{
+	display:block;
+	width:183px;
+	height:30px;
+	line-height:30px;
+	margin-left:8px;
+	text-decoration:none;
+	border-bottom:1px solid #CCC;
+}
+#online_list_content a div{
+	width:12px;
+	height:12px;
+	margin-top:9px;
+	margin-left:10px;
+	margin-right:20px;
+	border-radius:6px;
+	float:left;
+	background:red;
+}
+
+
+/* 版权信息 */
+#footer{
+	width:100%;
+	height:50px;
+	background:;
+	position:absolute;
+	bottom:0;
+	text-align:center;
+	font-size:15px;
+}
+#footer a:hover{
+	color:blue;
+}
+
+
+
+
+
+
+
